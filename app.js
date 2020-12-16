@@ -1,16 +1,10 @@
 const autos = require('./autos');
 
-
-
 let comprador = {
     nombre: "Juan",
     capacidadDePagoEnCuotas: 7200,
-    capacidadDePagoTotal: 100000000
-        
+    capacidadDePagoTotal: 100000     
 }
-
-
-
 
 const concesionaria = {
     autos: autos,
@@ -99,38 +93,17 @@ const concesionaria = {
 
         let autosParaVentaQuePuedeComprar = []
 
-        let estoyAlmacenando
-
-        autosParaVenta.filter(function (elAuto) {
-            arrayPuedeComprar.filter(function (trueOrFalse) {
-                // if (trueOrFalse == true) {
-                //     return autosParaVentaQuePuedeComprar.push(elAuto)
-                // }
-                console.log(trueOrFalse);
-            })
+        for (let i = 0; i <= arrayPuedeComprar.length; i++) {
+            console.log(i);
+            if (arrayPuedeComprar[i] === true) {    
+                autosParaVentaQuePuedeComprar.push(autosParaVenta[i])
+            }
             
-        }) 
-        // return autosParaVentaQuePuedeComprar
+        }
+        
+        return autosParaVentaQuePuedeComprar
     }
 }
-// console.log(concesionaria.autos + "Aqui termina el console.log");
 
 
-
-// concesionaria.venderAuto("APL123");
-
-
-// console.log(concesionaria.autos + "Aqui termina el console.log");
-// console.log(concesionaria.autosParaLaVenta());
-
-
-// console.log(concesionaria.autosNuevos());
-
-// console.log(concesionaria.listaDeVentas());
-
-// console.log(concesionaria.totalDeVentas());
-
-// console.log(concesionaria.puedeComprar(concesionaria.autosParaLaVenta()[1], comprador));
-
-// console.log(concesionaria.autosQuePuedeComprar(comprador));
 concesionaria.autosQuePuedeComprar(comprador)
